@@ -30,7 +30,7 @@ def load_img_data(dir, kind: str = 'train'):
 
 
 def plot_prediction(top_probs, top_classes, img, img_name: str = ''):
-    fig, axes = plt.subplots(1, 2, layout='tight')
+    _, axes = plt.subplots(1, 2, layout='tight')
     
     # Show image
     axes[0].axis('off')
@@ -38,7 +38,7 @@ def plot_prediction(top_probs, top_classes, img, img_name: str = ''):
     axes[0].imshow(img)
 
     # Show classification results
-    axes[1].set_title('Class Probability')
+    axes[1].set_title('Top Class Probability')
     axes[1].barh(top_classes, top_probs)
     axes[1].set_xlim(0, 1.1)
 

@@ -12,7 +12,7 @@ def get_parser():
     parser.add_argument('checkpoint', help="Input the path to the checkpoint file which contains trained model's information.")
 
     # Optional arguments
-    parser.add_argument('--topk', metavar='K', type=int, default=1, help='Input the number of top classes to be displayed.')
+    parser.add_argument('--topk', metavar='K', type=int, default=3, help='Input the number of top classes to be displayed. Default is 3.')
     parser.add_argument('--category_names', metavar='JSON', help="Input the path to the JSON file which is a mapping of categories to real names.")
     parser.add_argument('--gpu', action='store_true', help='Allow the program to use GPU to train the model. No arguments needed.')
 

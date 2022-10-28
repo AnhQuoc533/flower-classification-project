@@ -52,7 +52,7 @@ class FlowerClassifier:
         val_data, 
         lr: float, 
         epochs: int, 
-        batch_size: int = 32, 
+        batch_size=32, 
         gpu=False, 
         plot_loss=False
     ):
@@ -130,7 +130,7 @@ class FlowerClassifier:
 
             plt.show()
 
-    def save(self, filename: str, dir: str = ''):
+    def save(self, filename: str, dir=''):
         checkpoint = {
             'arch': self.arch,
             'neurons': [layer.out_features for layer in self.model.classifier if type(layer) is nn.Linear],
