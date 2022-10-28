@@ -1,11 +1,11 @@
-from model import VGGModel
+from model import FlowerClassifier
 import argparse
 import json
 from PIL import Image
 from utils import get_transforms, plot_prediction
 
 def get_parser():
-    parser = argparse.ArgumentParser(description='Train a new VGG neural network on a image dataset.')
+    parser = argparse.ArgumentParser(description='Predict the type of input flower image using saved model.')
 
     # Load image and checkpoint
     parser.add_argument('img_path', help="Input the path to the image which will be predicted by the model.")
@@ -30,7 +30,7 @@ if __name__ == '__main__':
     data = preprocess(img)
 
     # Load model
-    model = VGGModel(file=args.checkpoint)
+    model = FlowerClassifier(file=args.checkpoint)
     
     # Get prediction from model
     top_p, top_cls = model.predict(data, args.topk, args.gpu)

@@ -1,9 +1,9 @@
-from model import VGGModel
+from model import FlowerClassifier
 import argparse
 from utils import load_img_data
 
 def get_parser():
-    parser = argparse.ArgumentParser(description='Train a new VGG neural network on a image dataset.')
+    parser = argparse.ArgumentParser(description='Train a new neural network on an image dataset (and save its information).')
 
     # Load and save
     parser.add_argument('data_dir', help="Input directory which contains two sub-folders of dataset: 'train' and 'val'.")
@@ -39,7 +39,7 @@ if __name__ == '__main__':
     val = load_img_data(data_dir + 'val', kind='val')
 
     # Load model
-    model = VGGModel(args.arch, args.hidden_units + [len(train.class_to_idx)], args.drop_p)
+    model = FlowerClassifier(args.arch, args.hidden_units + [len(train.class_to_idx)], args.drop_p)
     
     # Train model
     print('Training model...')

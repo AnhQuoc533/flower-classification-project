@@ -4,7 +4,7 @@ from torchvision import models
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
 
-class VGGModel:
+class FlowerClassifier:
 
     def __init__(self, arch: str = None, neurons: list[int] = None, drop_p=.0, file: str = None):
         # Load model's information from file
