@@ -43,7 +43,7 @@ if __name__ == '__main__':
     # Map classes to real names
     if args.category_names is not None:
         with open(args.category_names, 'r') as f:
-            cls_to_name = json.load(f)
+            cls_to_name = json.load(f, strict=False)
         top_cls = [cls_to_name[cls] for cls in top_cls]
 
     # Display result
