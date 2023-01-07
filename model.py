@@ -156,7 +156,7 @@ class FlowerClassifier:
                 print('CUDA is not available in your device. CPU will be utilized instead.')
                 
         if X.ndim != 3:
-            raise ValueError('3D Tenser expected for X.')
+            raise ValueError('3D Tensor expected for X.')
         else:
             X = X.unsqueeze(0).to(device)
 
