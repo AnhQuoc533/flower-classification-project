@@ -3,7 +3,7 @@ import argparse
 from utils import load_img_data
 
 def get_parser():
-    parser = argparse.ArgumentParser(description='Train a new neural network on an image dataset (and save its information).')
+    parser = argparse.ArgumentParser(description='Train a neural network on an image dataset (and save its information).')
 
     # Load and save
     parser.add_argument('data_dir', help="Input directory which contains two sub-folders of dataset: 'train' and 'val'.")

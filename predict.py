@@ -5,7 +5,7 @@ from PIL import Image
 from utils import get_transforms, plot_prediction
 
 def get_parser():
-    parser = argparse.ArgumentParser(description='Predict the type of input flower image using saved model.')
+    parser = argparse.ArgumentParser(description='Predict the type of flower in input image using saved model.')
 
     # Load image and checkpoint
     parser.add_argument('img_path', help="Input the path to the image which will be predicted by the model.")
