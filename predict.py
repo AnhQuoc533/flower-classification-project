@@ -13,8 +13,8 @@ def get_parser():
 
     # Optional arguments
     parser.add_argument('--topk', metavar='K', type=int, default=3, help='Input the number of top classes to be displayed. Default is 3.')
-    parser.add_argument('--category_names', metavar='JSON', help="Input the path to the JSON file which is a mapping of categories to real names.")
-    parser.add_argument('--gpu', action='store_true', help='Allow the program to use GPU to train the model. No arguments needed.')
+    parser.add_argument('--category_names', metavar='JSON', help="Input the path to the JSON file which is a mapping of categories to real name of flowers.")
+    parser.add_argument('--gpu', action='store_true', help='Allow the program to use GPU to perform prediction. No arguments needed.')
 
     return parser
 
