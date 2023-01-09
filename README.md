@@ -17,7 +17,7 @@ The image classifier is built and trained step by step with a thorough instructi
 ---
 This is the main part of the project. The code written in Part 1 is used as part of the application for the classifier. 
 
-The application consists of two main files: `train.py` and `predict.py`. The first file traina a new neural network model on a dataset and saves the model as a checkpoint. The second file uses a trained model to predict the class for an input image.
+The application consists of two main files: `train.py` and `predict.py`. The first file trains a new neural network model on a dataset and saves the model as a checkpoint. The second file uses a trained model to predict the species of an input image of flower.
 
 Usage:
 
