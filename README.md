@@ -10,12 +10,10 @@ Additionally, please keep all files intact to avoid error.
 
 &nbsp;
 ## Part 1: Developing classifier in Jupyter Notebook
----
 The image classifier is built and trained step by step with a thorough instruction in [Image Classifier Project.ipynb](Image%20Classifier%20Project.ipynb).
 
 &nbsp;
 ## Part 2: Building the command line application
----
 This is the main part of the project. The code written in Part 1 is used as part of the application for the classifier. 
 
 The application consists of two main files: `train.py` and `predict.py`. The first file trains a new neural network model on a dataset and saves the model as a checkpoint. The second file uses a trained model to predict the species of an input image of flower.
