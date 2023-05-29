@@ -1,6 +1,5 @@
-# FLOWER CLASSIFIER PROJECT
-This repository contains my submissions for the final project of [AI Programming with Python Nanodegree Program](https://www.udacity.com/course/ai-programming-python-nanodegree--nd089). The purpose of this project is to utilize pre-trained model from **PyTorch** to build, train and implement an image 
-classifier that recognizes different species of flowers using transfer learning technique. The project is broken down into two parts: developing the classifier in Jupyter Notebook and then building the command line application for the classifier.
+# FLOWER IMAGE CLASSIFIER PROJECT
+This repository contains my submission to the final project of [AI Programming with Python Nanodegree Program](https://www.udacity.com/course/ai-programming-python-nanodegree--nd089). The purpose of this project is to utilize a pre-trained model from [PyTorch](https://pytorch.org) to build, train, and implement an image classifier that recognizes different species of flowers using transfer learning technique. The project is broken down into two parts: developing the classifier in Jupyter Notebook and then building the command line application for the classifier.
 
 To successfully run the project, please install all required packages listed in [requirements.txt](requirements.txt). However, the following command line will help install the packages according to the configuration file conveniently:
 ```
