@@ -1,6 +1,6 @@
 # FLOWER IMAGE CLASSIFIER PROJECT
 ## Overview
-This repository contains my submission to the final project of [AI Programming with Python Nanodegree Program](https://www.udacity.com/course/ai-programming-python-nanodegree--nd089). The purpose of this project is to utilize a pre-trained model from [PyTorch](https://pytorch.org) to build, train, and implement an image classifier that recognizes different species of flowers using transfer learning technique.
+The purpose of this project is to utilize a pre-trained model from [PyTorch](https://pytorch.org) to build, train, and implement an image classifier that recognizes different species of flowers using transfer learning technique.
 
 The project is broken down into two parts: developing the classifier in Jupyter Notebook and then building the command line application for the classifier.
 
@@ -26,15 +26,26 @@ The image classifier is built and trained step by step with a thorough instructi
 
 &nbsp;
 ## Part 2: Building the command line application
-This is the main part of the project. The code written in Part 1 is used as part of the application for the classifier. 
+This is the main part of the project. The code written in Part 1 is reused as part of the application for the classifier. 
 
-The application consists of two main files: `train.py` and `predict.py`. The first file trains a new neural network model on a dataset and saves the model as a checkpoint. The second file uses a trained model to predict the species of an input image of flower.
+The application consists of two main functions: 
+- Construct a new neural network on a dataset with user-defined architecture, train the initialized model, and saves it as checkpoint.
+- Load the trained model from the checkpoint file and deploy it on user-chosen images.
 
 Usage:
 
-1. `train.py`:
+1. **Model construction and training:**
     ```
-    py train.py [-h] [--save_dir [SAVE_DIR]] [--arch {vgg11,vgg13,vgg16,vgg19}] [--learning_rate ALPHA] [--hidden_units [HIDDEN_UNITS ...]] [--epochs EPOCHS] [--batch_size BATCH_SIZE] [--drop_p P] [--gpu] data_dir
+    py train.py [-h] 
+                [--save_dir [SAVE_DIR]] 
+                [--arch {vgg11,vgg13,vgg16,vgg19}] 
+                [--learning_rate ALPHA] 
+                [--hidden_units [HIDDEN_UNITS ...]] 
+                [--epochs EPOCHS] 
+                [--batch_size BATCH_SIZE] 
+                [--drop_p P] 
+                [--gpu] 
+                data_dir
     ```
 * Positional arguments:
     * `data_dir`: Input directory which contains two sub-folders of dataset: _train_ and _val_.
@@ -52,13 +63,18 @@ Usage:
 
 &nbsp;
 
-2. `predict.py`:
+2. **Model loading and deployment:**
     ```
-    py predict.py [-h] [--topk K] [--category_names JSON] [--gpu] img_path checkpoint
+    py predict.py [-h] 
+                  [--topk K] 
+                  [--category_names JSON] 
+                  [--gpu] 
+                  img_path 
+                  checkpoint
     ```
 * Positional arguments:
     * `img_path`: Input the path to the image which will be predicted by the model.
-    * `checkpoint`: Input the path to the checkpoint file which contains trained model's information.
+    * `checkpoint`: Input the path to the file which contains trained model's information.
 
 * Optional arguments:
     * `-h, --help`: Show help message and exit
