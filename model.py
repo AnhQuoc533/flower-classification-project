@@ -75,11 +75,14 @@ class FlowerClassifier:
         # Define loss and optimizer
         criterion = nn.CrossEntropyLoss(reduction='sum')
         optimizer = optim.Adam(self.model.classifier.parameters(), lr=lr)
+
         train_costs, val_costs = [], [None]
+        train_size, val_size = len(trainloader.dataset), len(valloader.dataset)
 
         # Train model
         for i in range(epochs):
             sum_loss = 0
+            # Training model
             for X, y in trainloader:
                 X, y = X.to(device), y.to(device)
                 optimizer.zero_grad()
@@ -89,14 +92,14 @@ class FlowerClassifier:
                 loss.backward()
                 optimizer.step()
 
-                sum_loss += loss.item()
+                sum_loss += loss
 
             # Print and save training costs
-            train_costs.append(sum_loss / len(trainloader.dataset))
+            train_costs.append(sum_loss.item() / train_size)
             print(f"Epoch: {i+1:3} -- Training cost (before epoch): {train_costs[-1]:.8f} -- ", end='')
 
-            # Compute and save validation costs
-            with torch.no_grad():
+            # Testing model
+            with torch.no_grad():  # Disable gradient calculation
                 self.model.eval()
                 
                 sum_loss = accuracy = 0
@@ -105,16 +108,17 @@ class FlowerClassifier:
 
                     # Compute validation cost
                     logits = self.model.forward(X)
-                    sum_loss += criterion(logits, y).item()
+                    sum_loss += criterion(logits, y)
 
                     # Compute validation accuracy
                     y_hat = F.softmax(logits, dim=1)
                     predictions = y_hat.argmax(dim=1)
                     accuracy += (predictions == y).count_nonzero()
 
-                val_costs.append(sum_loss / len(valloader.dataset))
+                # Print and save validation costs
+                val_costs.append(sum_loss.item() / val_size)
                 print(f"Validation cost (after epoch): {val_costs[-1]:.8f} -- ", end='')
-                print(f"Validation accuracy: {accuracy.item()/len(valloader.dataset):.8f}")
+                print(f"Validation accuracy: {accuracy.item() / val_size:.8f}")
 
                 self.model.train()
 
@@ -123,7 +127,7 @@ class FlowerClassifier:
             plt.plot(train_costs, label='Training cost')
             plt.plot(val_costs, label='Validation cost')
 
-            plt.xticks([i for i in range(epochs + 1)])
+            plt.xticks(range(epochs + 1))
             plt.xlabel('Epoch')
             plt.ylabel('Cost')
             plt.legend()

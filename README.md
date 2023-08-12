@@ -15,7 +15,7 @@ torchvision>=0.13.1
 matplotlib>=3.5.3
 pillow>=9.0.0
 ```
-The following command line will help install the required dependencies according to the configuration file conveniently:
+The following command line will help install the required dependencies conveniently:
 ```
 pip -r requirements.txt
 ```
