@@ -1,4 +1,25 @@
 # FLOWER IMAGE CLASSIFIER PROJECT
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#dependencies">Dependencies</a></li>
+    <li>
+      <a href="#part-1-developing-classifier-in-jupyter-notebook">
+        Part 1: Developing classifier in Jupyter Notebook
+      </a>
+    </li>
+    <li>
+      <a href="#part-2-building-the-command-line-application">Part 2: Building the command line application</a>
+      <ul>
+        <li><a href="#application-usage">Application Usage</a></li>
+      </ul>
+    </li>
+  </ol>
+</details>
+
 ## Overview
 The purpose of this project is to utilize a pre-trained model from [PyTorch](https://pytorch.org) to build, train, and implement an image classifier that recognizes different species of flowers using transfer learning technique.
 
@@ -32,7 +53,7 @@ The application consists of two main functions:
 - Construct a new neural network on a dataset with user-defined architecture, train the initialized model, and saves it as checkpoint.
 - Load the trained model from the checkpoint file and deploy it on user-chosen images.
 
-Usage:
+### Application Usage:
 
 1. **Model construction and training:**
     ```
