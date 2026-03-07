@@ -72,7 +72,7 @@ The application consists of two main functions:
     * `data_dir`: Input directory which contains two sub-folders of dataset: _train_ and _val_.
 
 * Optional arguments:
-    * `-h, --help`: Show help message and exit
+    * `-h`, `--help`: Show help message and exit.
     * `--save_dir [SAVE_DIR]`: Input directory where information of trained model will be saved. No argument means saving at the current working directory.
     * `--arch {vgg11,vgg13,vgg16,vgg19}`: Choose a VGG model architecture. Default is vgg19.
     * `--learning_rate ALPHA`: Set learning rate value. Default is 0.001.
@@ -98,7 +98,7 @@ The application consists of two main functions:
     * `checkpoint`: Input the path to the file which contains trained model's information.
 
 * Optional arguments:
-    * `-h, --help`: Show help message and exit
+    * `-h`, `--help`: Show help message and exit.
     * `--topk K`: Input the number of top classes to be displayed. Default is 3.
     * `--category_names JSON`: Input the path to the JSON file which is a mapping of categories to real name of flowers.
     * `--gpu`: Allow the program to use GPU to perform prediction. No arguments needed.
