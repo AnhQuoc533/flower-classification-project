@@ -25,12 +25,12 @@ def get_transforms(kind: str):
         raise ValueError("kind must be one of 'train', 'val' or 'test'.")
 
 
-def load_img_data(dir, kind: str = 'train'):
+def load_img_data(dir, kind: str):
     return datasets.ImageFolder(dir, transform=get_transforms(kind))
 
 
 def plot_prediction(top_probs, top_classes, img, img_name: str = ''):
-    _, axes = plt.subplots(1, 2, layout='tight')
+    _, axes = plt.subplots(1, 2, figsize=(8, 3.25), layout='constrained')
     
     # Show image
     axes[0].axis('off')

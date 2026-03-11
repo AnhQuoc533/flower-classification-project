@@ -67,6 +67,7 @@ class FlowerClassifier:
         device = torch.device('cpu')
         if gpu:
             if torch.cuda.is_available():
+                print('Using GPU...')
                 device = torch.device('cuda')
                 self.model.to(device)
             else:
@@ -154,6 +155,7 @@ class FlowerClassifier:
         device = torch.device('cpu')
         if gpu:
             if torch.cuda.is_available():
+                print('Using GPU...')
                 device = torch.device('cuda')
                 self.model.to(device)
             else:

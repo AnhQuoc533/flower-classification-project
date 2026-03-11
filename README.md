@@ -21,9 +21,9 @@
 </details>
 
 ## Overview
-The purpose of this project is to utilize a pre-trained model from [PyTorch](https://pytorch.org) to build, train, and implement an image classifier that recognizes different species of flowers using transfer learning technique.
+The purpose of this project is to utilize a pre-trained model from [PyTorch](https://pytorch.org) to build, train, and implement an image classifier capable of identifying different species of flowers using transfer learning techniques.
 
-The project is broken down into two parts: developing the classifier in Jupyter Notebook and then building the command line application for the classifier.
+The project is broken down into two parts: developing the flower classifier in a Jupyter Notebook and building a command-line application for the general-purpose image classifier.
 
 Additionally, please keep all files intact to avoid error.
 
@@ -43,15 +43,15 @@ pip -r requirements.txt
 
 &nbsp;
 ## Part 1: Developing classifier in Jupyter Notebook
-The image classifier is built and trained step by step with a thorough instruction in [Image Classifier Project.ipynb](Image%20Classifier%20Project.ipynb).
+The flower image classifier is built and trained step by step, with a thorough instruction provided in [Image Classifier Project.ipynb](Image%20Classifier%20Project.ipynb).
 
 &nbsp;
 ## Part 2: Building the command line application
-This is the main part of the project. The code written in Part 1 is reused as part of the application for the classifier. 
+This is the core part of the project, where the code developed in Part 1 is repurposed and integrated into the application for the general-purpose image classifier. 
 
-The application consists of two main functions: 
-- Construct a new neural network on a dataset with user-defined architecture, train the initialized model, and saves it as checkpoint.
-- Load the trained model from the checkpoint file and deploy it on user-chosen images.
+The application consists of two main functions:
+- **Training:** Construct a new AI-powered image classifier on a custom dataset with a user-defined architecture, train the model, and save it as a checkpoint.
+- **Prediction:** Load the trained model from a checkpoint file and run inference on a user-selected image.
 
 ### Application Usage:
 
@@ -99,6 +99,6 @@ The application consists of two main functions:
 
 * Optional arguments:
     * `-h`, `--help`: Show help message and exit.
-    * `--topk K`: Input the number of top classes to be displayed. Default is 3.
-    * `--category_names JSON`: Input the path to the JSON file which is a mapping of categories to real name of flowers.
+    * `k`, `--topk K`: Input the number of top classes to be displayed. Default is 3.
+    * `--category_names JSON`: Input the path to the JSON file mapping numeric labels to category names.
     * `--gpu`: Allow the program to use GPU to perform prediction. No arguments needed.

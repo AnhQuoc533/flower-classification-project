@@ -9,11 +9,11 @@ def get_parser():
 
     # Load image and checkpoint
     parser.add_argument('img_path', help="Input the path to the image which will be predicted by the model.")
-    parser.add_argument('checkpoint', help="Input the path to the checkpoint file which contains trained model's information.")
+    parser.add_argument('checkpoint', help="Input the path to the checkpoint file which contains information of a trained model.")
 
     # Optional arguments
-    parser.add_argument('--topk', metavar='K', type=int, default=3, help='Input the number of top classes to be displayed. Default is 3.')
-    parser.add_argument('--category_names', metavar='JSON', help="Input the path to the JSON file which is a mapping of categories to real name of flowers.")
+    parser.add_argument('-k', '--topk', metavar='K', type=int, default=3, help='Input the number of top classes to be displayed. Default is 3.')
+    parser.add_argument('--category_names', metavar='JSON', help="Input the path to the JSON file mapping numeric labels to category names.")
     parser.add_argument('--gpu', action='store_true', help='Allow the program to use GPU to perform prediction. No arguments needed.')
 
     return parser
@@ -23,6 +23,9 @@ if __name__ == '__main__':
     arg_parser = get_parser()
     args = arg_parser.parse_args()
     # print(args)
+    if args.topk <= 0 :
+        print("Invalid number of top classes.")
+        exit(1)
 
     # Load and pre-process image
     preprocess = get_transforms('test')

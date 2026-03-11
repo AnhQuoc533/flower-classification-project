@@ -8,7 +8,7 @@ def get_parser():
     # Load and save
     parser.add_argument('data_dir', help="Input directory which contains two sub-folders of dataset: 'train' and 'val'.")
     parser.add_argument('--save_dir', nargs='?', const='', 
-                        help='Input directory where information of trained model will be saved.\
+                        help='Input directory where the trained model will be saved.\
                               No argument means saving at the current working directory.')
     parser.add_argument('--arch', choices=['vgg11', 'vgg13', 'vgg16', 'vgg19'], default='vgg19', 
                         help='Choose a VGG model architecture. Default is vgg19.')
@@ -16,7 +16,7 @@ def get_parser():
     # Set hyper-parameters
     parser.add_argument('--learning_rate', metavar='ALPHA', type=float, default=.001, help='Set learning rate value. Default is 0.001.')
     parser.add_argument('--hidden_units', type=int, nargs='*', default=[], 
-                        help='Input multiple integers separated by a single space to design the hidden layers for \
+                        help='Input multiple positive integers separated by a single space to design the hidden layers for \
                               the classification part of the model.')
     parser.add_argument('--epochs', type=int, default=10, help='Set the number of epochs. Default is 10.')
     parser.add_argument('--batch_size', type=int, default=32, help='Set the size of each batch. Default is 32.')
@@ -42,9 +42,9 @@ if __name__ == '__main__':
     model = FlowerClassifier(args.arch, args.hidden_units + [len(train.class_to_idx)], args.drop_p)
     
     # Train model
-    print('Training model...')
+    print('Training model...\n')
     model.train(train, val, args.learning_rate, args.epochs, args.batch_size, args.gpu, plot_loss=True)
 
     if args.save_dir is not None:
-        print('Saving model...')
+        print('\nSaving model...')
         model.save('checkpoint.pth', args.save_dir)
