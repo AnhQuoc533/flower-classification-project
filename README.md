@@ -1,4 +1,4 @@
-# FLOWER IMAGE CLASSIFIER PROJECT
+# FLOWER IMAGE CLASSIFIER
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -23,7 +23,7 @@
 ## Overview
 The purpose of this project is to utilize a pre-trained model from [PyTorch](https://pytorch.org) to build, train, and implement an image classifier capable of identifying different species of flowers using transfer learning techniques.
 
-The project is broken down into two parts: developing the flower classifier in a Jupyter Notebook and building a command-line application for the general-purpose image classifier.
+The project is broken down into two parts: developing the flower classifier in a Jupyter Notebook and building a command-line application for a customizable image classifier.
 
 Additionally, please keep all files intact to avoid error.
 
@@ -46,8 +46,8 @@ pip -r requirements.txt
 The flower image classifier is built and trained step by step, with a thorough instruction provided in [Image Classifier Project.ipynb](Image%20Classifier%20Project.ipynb).
 
 &nbsp;
-## Part 2: Building the command line application
-This is the core part of the project, where the code developed in Part 1 is repurposed and integrated into the application for the general-purpose image classifier. 
+## Part 2: Building the command-line application
+This is the core part of the project, where the code developed in Part 1 is repurposed and integrated into a command-line application for a user-defined image classifier. 
 
 The application consists of two main functions:
 - **Training:** Construct a new AI-powered image classifier on a custom dataset with a user-defined architecture, train the model, and save it as a checkpoint.
@@ -99,6 +99,6 @@ The application consists of two main functions:
 
 * Optional arguments:
     * `-h`, `--help`: Show help message and exit.
-    * `k`, `--topk K`: Input the number of top classes to be displayed. Default is 3.
+    * `-k K`, `--topk K`: Input the number of top classes to be displayed. Default is 3.
     * `--category_names JSON`: Input the path to the JSON file mapping numeric labels to category names.
     * `--gpu`: Allow the program to use GPU to perform prediction. No arguments needed.
